@@ -3,7 +3,7 @@
 Welcome to my professional portfolio repository. This project showcases my dual expertise in **Electrical Engineering** and **Full-Stack Web Development (Django/Python)**.
 
 ## 🚀 Live Demo
-You can view the live site here: [https://yourusername.github.io/your-repo-name/](https://yourusername.github.io/your-repo-name/)
+You can view the live site here: [https://yourusername.github.io/your-repo-name/](https://kbulbul026-coder.github.io/portfolio/)
 
 ## 🛠️ Featured Project: DigiFile
 **DigiFile** is a secure document locker designed to help users manage sensitive certificates.
