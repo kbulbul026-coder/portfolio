@@ -1,10 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Paresh Kumar Hansda - Python & Django Developer and Electrical Engineer">
     <title>Paresh Kumar Hansda | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #00d4ff;
@@ -16,7 +17,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -32,21 +33,21 @@
 
         header {
             text-align: center;
-            padding: 80px 0;
+            padding: 100px 0;
             background: radial-gradient(circle at center, #1e1e1e 0%, #121212 100%);
             border-bottom: 2px solid var(--primary);
         }
 
         .subtitle { 
             color: var(--primary); 
-            font-weight: bold; 
+            font-weight: 700; 
             text-transform: uppercase; 
             letter-spacing: 2px;
             margin-top: 10px;
         }
 
-        section { margin: 60px 0; }
-        h2 { border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 30px; color: var(--primary); }
+        section { margin: 80px 0; }
+        h2 { border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 40px; color: var(--primary); }
 
         .grid {
             display: grid;
@@ -56,56 +57,69 @@
 
         .card {
             background: var(--card-bg);
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
             border: 1px solid #333;
-            transition: all 0.3s ease;
-            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card:hover { border-color: var(--primary); transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0, 212, 255, 0.1); }
 
-        /* Skill Bars */
-        .skill-label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-top: 15px; }
+        /* Skill Bars Animation */
+        .skill-label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-top: 20px; }
         .skill-bar-container { background: #333; border-radius: 10px; height: 8px; margin-top: 8px; overflow: hidden; }
         .skill-per {
             height: 100%;
             background: var(--primary);
             box-shadow: 0 0 10px var(--primary);
-            width: var(--target-width);
+            width: 0; /* Starts at 0 for animation */
+            animation: fillBars 2.5s forwards ease-in-out;
         }
+
+        @keyframes fillBars { to { width: var(--target-width); } }
 
         .cert-badge {
             background: rgba(0, 255, 136, 0.1);
             color: var(--accent);
-            padding: 4px 12px;
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             border: 1px solid var(--accent);
+            font-weight: bold;
         }
 
         .verify-link {
             color: var(--primary);
             text-decoration: none;
             font-size: 0.85rem;
-            display: block;
-            margin-top: 10px;
+            display: inline-block;
+            margin-top: 15px;
+            border: 1px solid var(--primary);
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: 0.3s;
         }
 
-        .verify-link:hover { text-decoration: underline; }
+        .verify-link:hover { background: var(--primary); color: #000; }
 
         .contact-btn {
             display: inline-block;
             margin-top: 20px;
-            padding: 12px 30px;
+            padding: 12px 35px;
             background: var(--primary);
             color: #000;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        footer { text-align: center; padding: 40px; border-top: 1px solid #333; color: var(--text-secondary); }
+        .contact-btn:hover { background: var(--accent); transform: scale(1.05); }
+
+        footer { text-align: center; padding: 60px; border-top: 1px solid #333; color: var(--text-secondary); font-size: 0.9rem; }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; color: var(--text-secondary); }
     </style>
 </head>
 <body>
@@ -114,25 +128,26 @@
     <div class="container">
         <h1>PARESH KUMAR HANSDA</h1>
         <p class="subtitle">Python & Django Developer | Electrical Engineer</p>
-        <p>Deoghar, Jharkhand | 8969172592 | <a href="https://digifile.pythonanywhere.com/" style="color:var(--primary)">digifile.pythonanywhere.com</a></p>
-        <a href="mailto:mystylepkh@gmail.com" class="contact-btn">Email Me</a>
+        <p>Deoghar, Jharkhand | 8969172592</p>
+        <p><a href="https://digifile.pythonanywhere.com/" style="color:var(--primary); text-decoration: none;">🔗 digifile.pythonanywhere.com</a></p>
+        <a href="mailto:mystylepkh@gmail.com" class="contact-btn">Get In Touch</a>
     </div>
 </header>
 
 <div class="container">
     
     <section id="projects">
-        <h2>Top Project</h2>
+        <h2>Live Projects</h2>
         <div class="card" style="width: 100%; box-sizing: border-box;">
-            <div style="display: flex; justify-content: space-between;">
-                <h3>DigiFile - Secure Document Locker</h3>
-                <span class="cert-badge">Live on PythonAnywhere</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <h3 style="margin:0">DigiFile - Secure Document Locker</h3>
+                <span class="cert-badge">Live Deployment</span>
             </div>
-            <p>A full-stack Django application for managing sensitive certificates (Caste, Income, ID, etc.).</p>
+            <p>Developed a full-stack secure platform for managing sensitive digital records like Caste, Income, and Identity certificates.</p>
             <ul>
-                <li><strong>Admin-Blind Privacy:</strong> Data remains private and inaccessible to system administrators.</li>
-                <li><strong>Security:</strong> SSL implemented for safe data transmission.</li>
-                <li><strong>Tech:</strong> Python, Django, SQLite, HTML/CSS.</li>
+                <li><strong>Privacy Architecture:</strong> Built with an "Admin-Blind" logic where user data remains strictly private.</li>
+                <li><strong>Secure Transmission:</strong> SSL/TLS integrated for encrypted data handling.</li>
+                <li><strong>Backend:</strong> Powered by Python/Django and hosted on PythonAnywhere.</li>
             </ul>
         </div>
     </section>
@@ -145,66 +160,73 @@
                     <h3 style="margin:0">Finance</h3>
                     <span class="cert-badge">SEBI / NISM</span>
                 </div>
-                <p><strong>Investor Certification</strong></p>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">Scored 88% (44/50). Reg: NISM20250000104655</p>
+                <p><strong>Investor Certification Examination</strong></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Cleared with a high score of 88% (44/50).</p>
+                <p style="font-size: 0.8rem; color: var(--accent);">Reg: NISM20250000104655</p>
             </div>
 
             <div class="card">
                 <h3>Electric Power Systems</h3>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">University at Buffalo (Nov 2020)</p>
-                <a href="https://coursera.org/verify/6Z5QBHKZ247A" class="verify-link" target="_blank">Verify: 6Z5QBHKZ247A →</a>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">University at Buffalo, New York</p>
+                <a href="https://coursera.org/verify/6Z5QBHKZ247A" class="verify-link" target="_blank">Verify Credential →</a>
             </div>
 
             <div class="card">
                 <h3>Python Programming</h3>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">University of Michigan (Nov 2020)</p>
-                <a href="https://coursera.org/verify/5Y7H8WJKKSKC" class="verify-link" target="_blank">Verify: 5Y7H8WJKKSKC →</a>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">University of Michigan</p>
+                <a href="https://coursera.org/verify/5Y7H8WJKKSKC" class="verify-link" target="_blank">Verify Credential →</a>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Technical Skills</h2>
+        <h2>Technical Proficiencies</h2>
         <div class="grid">
             <div class="card">
-                <h3 style="margin-bottom: 15px;">Engineering</h3>
-                <div class="skill-label"><span>AutoCAD</span><span>90%</span></div>
+                <h3>Engineering Skills</h3>
+                <div class="skill-label"><span>AutoCAD (Electrical)</span><span>90%</span></div>
                 <div class="skill-bar-container"><div class="skill-per" style="--target-width: 90%;"></div></div>
-                <div class="skill-label"><span>Electrical Wiring</span><span>85%</span></div>
+                
+                <div class="skill-label"><span>System Diagnosis</span><span>85%</span></div>
                 <div class="skill-bar-container"><div class="skill-per" style="--target-width: 85%;"></div></div>
             </div>
+
             <div class="card">
-                <h3 style="margin-bottom: 15px;">Development</h3>
-                <div class="skill-label"><span>Django / Python</span><span>80%</span></div>
+                <h3>Development Skills</h3>
+                <div class="skill-label"><span>Python / Django</span><span>80%</span></div>
                 <div class="skill-bar-container"><div class="skill-per" style="--target-width: 80%;"></div></div>
-                <div class="skill-label"><span>HTML / CSS</span><span>85%</span></div>
+                
+                <div class="skill-label"><span>HTML / CSS / JS</span><span>85%</span></div>
                 <div class="skill-bar-container"><div class="skill-per" style="--target-width: 85%;"></div></div>
             </div>
         </div>
     </section>
 
-    <section id="journey">
-        <h2>Professional Experience</h2>
-        <div class="card" style="width: 100%; box-sizing: border-box;">
-            <h3>Krishnan Design Pvt Ltd</h3>
-            <p style="color: var(--primary);">Technical Associate & AutoCAD Instructor</p>
+    <section id="experience">
+        <h2>Work History</h2>
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3>Krishnan Design Pvt Ltd</h3>
+                <span style="color: var(--primary); font-size: 0.9rem;">Associate Instructor</span>
+            </div>
             <ul>
-                <li>Provided AutoCAD training and managed electrical system diagnosis.</li>
-                <li>Bridge the gap between electrical hardware and software management tools.</li>
+                <li>Conducted professional training on AutoCAD for electrical design.</li>
+                <li>Diagnosed electrical wiring faults and optimized system layouts.</li>
+                <li>Created internal tools to streamline project tracking.</li>
             </ul>
         </div>
     </section>
 
     <section id="education">
-        <h2>Education</h2>
+        <h2>Academic Background</h2>
         <div class="grid">
             <div class="card">
-                <h4>B.Tech Electrical</h4>
-                <p>Dumka Engineering College (2018-2023)</p>
+                <h4>B.Tech in Electrical Engineering</h4>
+                <p style="color: var(--text-secondary);">Dumka Engineering College<br>2018 - 2023</p>
             </div>
             <div class="card">
-                <h4>Diploma Electrical</h4>
-                <p>Govt. Polytechnic Dumka (Graduated 2017)</p>
+                <h4>Diploma in Electrical Engineering</h4>
+                <p style="color: var(--text-secondary);">Govt. Polytechnic Dumka<br>Graduated 2017</p>
             </div>
         </div>
     </section>
@@ -212,7 +234,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2025 Paresh Kumar Hansda | Developed with Python & Django</p>
+    <p>&copy; 2025 Paresh Kumar Hansda | Hand-coded with HTML, CSS, and Passion</p>
 </footer>
 
 </body>
